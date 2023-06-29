@@ -7,7 +7,7 @@ This repository contains multiple ESLint configurations bundled together. It pro
 To install the ESLint configuration for a specific framework, you can use npm. For example, to install the Angular configuration, run the following command:
 
 ```bash
-npm install @lenne.tech/eslint-config-angular
+npm install -D @lenne.tech/eslint-config-angular
 ```
 
 
