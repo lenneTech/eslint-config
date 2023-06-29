@@ -4,10 +4,10 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "release": "npm version patch --workspaces=true",
-    "release:minor": "npm version minor --workspaces=true",
-    "release:major": "npm version major --workspaces=true",
-    "postversion": "git add . && git commit --m 'Publish' && git push && git push --tags"
+    "release": "npm version patch --workspaces=true && npm run postrelease",
+    "release:minor": "npm version minor --workspaces=true && npm run postrelease",
+    "release:major": "npm version major --workspaces=true && npm run postrelease",
+    "postrelease": "git add . && git commit --m 'Publish' && git push && git push --tags"
   },
   "workspaces": [
     "packages/eslint-config-angular",
