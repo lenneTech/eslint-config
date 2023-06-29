@@ -4,21 +4,51 @@ This repository contains multiple ESLint configurations bundled together. It pro
 
 ## Installation
 
-To install the ESLint configuration for a specific framework, you can use npm. For example, to install the Angular configuration, run the following command:
+To install the ESLint configuration for a specific framework, you can use npm. For example, to install the configuration, run the following command:
+
+Angular:
 
 ```bash
-npm install -D @lenne.tech/eslint-config-angular
+npm install --save-dev @lenne.tech/eslint-config-angular
 ```
 
+Vue:
 
+```bash
+npm install --save-dev @lenne.tech/eslint-config-vue
+```
+
+TypeScript:
+
+```bash
+npm install --save-dev @lenne.tech/eslint-config-ts
+```
 
 ## Configuration
 
-Once the package is installed, you need to update your project's ESLint configuration file (usually `.eslintrc.json`) to extend the desired configuration. Here's an example for Angular:
+Once the package is installed, you need to update your project's ESLint configuration file (usually `.eslintrc.json`) to extend the desired configuration.
+
+Angular:
 
 ```json
 {
-  "extends": "@lenne.tech/eslint-config-angular"
+  "extends": "@lenne.tech/angular"
+}
+```
+
+Vue:
+
+```json
+{
+  "extends": "@lenne.tech/vue"
+}
+```
+
+TypeScript:
+
+```json
+{
+  "extends": "@lenne.tech/ts"
 }
 ```
 
@@ -33,5 +63,3 @@ Contributions to this ESLint configuration package are welcome! If you encounter
 ## License
 
 This package is open-source and released under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use it in your projects.
-
-
