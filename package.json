@@ -1,6 +1,6 @@
 {
   "name": "@lenne.tech/eslint-config-monorepo",
-  "version": "0.0.2-dev.0",
+  "version": "0.0.2-dev.1",
   "private": true,
   "packageManager": "pnpm@8.5.1",
   "license": "MIT",
