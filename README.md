@@ -14,7 +14,7 @@ npm install @lenne.tech/eslint-config-angular
 
 ## Configuration
 
-Once the package is installed, you need to update your project's ESLint configuration file (usually `.eslintrc`) to extend the desired configuration. Here's an example for Angular:
+Once the package is installed, you need to update your project's ESLint configuration file (usually `.eslintrc.json`) to extend the desired configuration. Here's an example for Angular:
 
 ```json
 {
