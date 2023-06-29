@@ -1,0 +1,55 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+env:
+  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node: [18]
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+      - run: npx changelogithub
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          cache: "npm"
+          node-version: ${{ matrix.node }}
+          registry-url: "https://registry.npmjs.org/"
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 3
+      - name: Install dependencies
+        run: npm install
+      - name: Publish Package
+        run: npm publish --access public --workspaces
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Deploy notification
+        if: always()
+        uses: adamkdean/simple-slack-notify@master
+        with:
+          channel: "#deployments"
+          status: ${{ job.status }}
+          success_text: "Version (#${{github.ref_name}}) von @lenne.tech/eslint-config wurde erfolgreich released."
+          failure_text: "Release (#${{github.ref_name}}) von @lenne.tech/eslint-config ist fehlgeschlagen."
+          cancelled_text: "Release (#${{github.ref_name}}) von @lenne.tech/eslint-config wurde abgebrochen."

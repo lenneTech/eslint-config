@@ -1,6 +1,6 @@
 {
   "name": "@lenne.tech/eslint-config-vue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "ESLint config of lenne.Tech for Vue",
   "license": "MIT",
   "keywords": [
@@ -17,9 +17,9 @@
     "eslint": ">=7.4.0"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.60.1",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-vue": "^9.15.1",
+    "@typescript-eslint/eslint-plugin": "5.60.1",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-vue": "9.15.1",
     "eslint-plugin-vitest": "0.0.57",
     "eslint-config-prettier": "8.8.0"
   },
