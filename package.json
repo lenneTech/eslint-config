@@ -1,6 +1,6 @@
 {
   "name": "@lenne.tech/eslint-config-monorepo",
-  "version": "0.0.1",
+  "version": "0.0.2-dev.0",
   "private": true,
   "packageManager": "pnpm@8.5.1",
   "license": "MIT",
@@ -8,11 +8,19 @@
     "lint": "pnpm -r run stub && eslint .",
     "test": "pnpm -r run test",
     "build": "pnpm -r run build",
-    "prepare": "pnpm -r run stub"
+    "prepare": "pnpm -r run stub",
+    "release": "npm version patch --workspaces=true",
+    "release:minor": "npm version minor --workspaces=true",
+    "release:major": "npm version major --workspaces=true"
   },
+  "workspaces": [
+    "packages/eslint-config-angular",
+    "packages/eslint-config-ts",
+    "packages/eslint-config-vue"
+  ],
   "devDependencies": {
-    "eslint": "^8.41.0",
-    "rimraf": "^5.0.1",
-    "typescript": "^5.0.4"
+    "eslint": "8.41.0",
+    "rimraf": "5.0.1",
+    "typescript": "5.0.4"
   }
 }
