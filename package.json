@@ -1,0 +1,18 @@
+{
+  "name": "@lenne.tech/eslint-config-monorepo",
+  "version": "0.0.1",
+  "private": true,
+  "packageManager": "pnpm@8.5.1",
+  "license": "MIT",
+  "scripts": {
+    "lint": "pnpm -r run stub && eslint .",
+    "test": "pnpm -r run test",
+    "build": "pnpm -r run build",
+    "prepare": "pnpm -r run stub"
+  },
+  "devDependencies": {
+    "eslint": "^8.41.0",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.0.4"
+  }
+}

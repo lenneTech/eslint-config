@@ -1,0 +1,31 @@
+{
+  "name": "@lenne.tech/eslint-config-vue",
+  "version": "0.0.1",
+  "description": "ESLint config of lenne.Tech for Vue",
+  "license": "MIT",
+  "keywords": [
+    "eslint-config-vue"
+  ],
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "watch": "watch 'yalc push --private'"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-vue": "^9.15.1",
+    "eslint-plugin-vitest": "0.0.57",
+    "eslint-config-prettier": "8.8.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config-typescript": "12.0.0",
+    "eslint": "8.41.0",
+    "watch": "1.0.2"
+  }
+}
