@@ -2,16 +2,11 @@
   "name": "@lenne.tech/eslint-config-monorepo",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@8.5.1",
   "license": "MIT",
   "scripts": {
-    "lint": "pnpm -r run stub && eslint .",
-    "test": "pnpm -r run test",
-    "build": "pnpm -r run build",
-    "prepare": "pnpm -r run stub",
-    "release": "npm version patch --workspaces=true",
-    "release:minor": "npm version minor --workspaces=true",
-    "release:major": "npm version major --workspaces=true"
+    "release": "npm version patch --workspaces=true && git push && git push --tags  ",
+    "release:minor": "npm version minor --workspaces=true && git push && git push --tags  ",
+    "release:major": "npm version major --workspaces=true && git push && git push --tags  "
   },
   "workspaces": [
     "packages/eslint-config-angular",
