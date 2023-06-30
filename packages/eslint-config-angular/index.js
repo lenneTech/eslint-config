@@ -102,6 +102,8 @@ module.exports = {
     // normal
     "no-console": ["error", { allow: ["info", "debug", "warn", "error"] }], // Disallows or restricts the use of certain console methods
     "prefer-template": "error",
+    curly: ["error"],
+    "max-statements-per-line": ["error", { max: 1 }],
 
     // off
     // TS

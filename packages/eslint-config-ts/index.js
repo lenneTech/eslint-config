@@ -126,7 +126,7 @@ module.exports = {
 
     // Common
     semi: ["error", "always"],
-    curly: ["error", "multi-or-nest", "consistent"],
+    curly: ["error"],
     quotes: ["error", "single"],
     "quote-props": ["error", "consistent-as-needed"],
 
