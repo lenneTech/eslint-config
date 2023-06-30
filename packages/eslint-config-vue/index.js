@@ -274,6 +274,8 @@ module.exports = {
       { exceptAfterSingleLine: true },
     ],
     "no-console": ["error", { allow: ["info", "debug", "warn", "error"] }],
+    curly: ["error"],
+    "max-statements-per-line": ["error", { max: 1 }],
 
     // off
     "@typescript-eslint/consistent-indexed-object-style": "off",
