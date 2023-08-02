@@ -104,6 +104,16 @@ module.exports = {
     "prefer-template": "error",
     curly: ["error"],
     "max-statements-per-line": ["error", { max: 1 }],
+    "sort-imports": [
+      "error",
+      {
+        ignoreCase: false,
+        ignoreDeclarationSort: true,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+        allowSeparatedGroups: false,
+      },
+    ],
 
     // off
     // TS

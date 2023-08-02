@@ -31,7 +31,6 @@ module.exports = {
     "@typescript-eslint/type-annotation-spacing": ["error", {}],
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
     "@typescript-eslint/prefer-ts-expect-error": "error",
-    "@typescript-eslint/no-require-imports": "error",
     // Override JS
     "no-useless-constructor": "off",
     "no-invalid-this": "off",
@@ -54,7 +53,6 @@ module.exports = {
     "object-curly-spacing": "off",
     "@typescript-eslint/object-curly-spacing": ["error", "always"],
     "@typescript-eslint/semi": ["error", "always"],
-    quotes: "off",
     "@typescript-eslint/quotes": ["error", "single"],
     "space-before-blocks": "off",
     "@typescript-eslint/space-before-blocks": ["error", "always"],
@@ -241,6 +239,7 @@ module.exports = {
     "block-scoped-var": "error",
     "consistent-return": "off",
     complexity: "off",
+    indent: "off", // Disallows inconsistent indentation
     eqeqeq: ["error", "smart"],
     "no-alert": "warn",
     "no-case-declarations": "error",
