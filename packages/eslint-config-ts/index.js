@@ -146,7 +146,7 @@ module.exports = {
     "comma-style": ["error", "last"],
     "no-constant-condition": "warn",
     "no-debugger": "error",
-    "no-console": ["error", { allow: ["info", "warn", "error"] }],
+    "no-console": ["error", { allow: ["debug", "info", "warn", "error"] }],
     "no-cond-assign": ["error", "always"],
     "func-call-spacing": "off",
     "key-spacing": ["error", { beforeColon: false, afterColon: true }],
