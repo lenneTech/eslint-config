@@ -31,6 +31,7 @@ module.exports = {
     "@typescript-eslint/type-annotation-spacing": ["error", {}],
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
     "@typescript-eslint/prefer-ts-expect-error": "error",
+    "@typescript-eslint/no-require-imports": "error",
     // Override JS
     "no-useless-constructor": "off",
     "no-invalid-this": "off",
