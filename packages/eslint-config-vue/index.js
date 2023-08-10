@@ -124,7 +124,7 @@ module.exports = {
       {
         html: {
           void: "always",
-          normal: "always",
+          normal: "never",
           component: "always",
         },
         svg: "always",
