@@ -25,6 +25,7 @@ module.exports = {
           { type: "element", prefix: "app", style: "kebab-case" },
         ], // Enforces a consistent naming convention for Angular components
         "no-async-promise-executor": "warn", // Warns when using an async function as a Promise executor
+        "@typescript-eslint/no-explicit-any": "warn",
         "@typescript-eslint/no-unused-vars": "error", // Reports unused variables in TypeScript code
       },
     },
@@ -120,7 +121,6 @@ module.exports = {
     "@typescript-eslint/consistent-indexed-object-style": "off", // Enforces consistent usage of index signatures or record types in TypeScript code
     "@typescript-eslint/naming-convention": "off", // Enforces naming conventions for variables, functions, classes, etc. in TypeScript code
     "@typescript-eslint/explicit-member-accessibility": "off", // Requires explicit accessibility modifiers on class members in TypeScript code
-    "@typescript-eslint/no-explicit-any": "off", // Disallows the use of the 'any' type in TypeScript code
     "@typescript-eslint/parameter-properties": "off", // Requires parameter properties to be declared on the constructor in TypeScript code
     "@typescript-eslint/interface-name-prefix": "off", // Requires or disallows a prefix for interface names in TypeScript code
     "@typescript-eslint/no-empty-interface": "off", // Disallows empty interfaces in TypeScript code
