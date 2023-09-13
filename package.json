@@ -12,8 +12,8 @@
     "packages/eslint-config-vue"
   ],
   "devDependencies": {
-    "eslint": "8.43.0",
+    "eslint": "8.49.0",
     "rimraf": "5.0.1",
-    "typescript": "5.1.6"
+    "typescript": "5.2.2"
   }
 }
