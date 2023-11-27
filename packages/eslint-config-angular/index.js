@@ -10,6 +10,7 @@ module.exports = {
         "plugin:@angular-eslint/recommended",
         // This is required if you use inline templates in Components
         "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:perfectionist/recommended-natural"
       ],
       rules: {
         /**
@@ -105,16 +106,6 @@ module.exports = {
     "prefer-template": "error",
     curly: ["error"],
     "max-statements-per-line": ["error", { max: 1 }],
-    "sort-imports": [
-      "error",
-      {
-        ignoreCase: false,
-        ignoreDeclarationSort: true,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
-        allowSeparatedGroups: false,
-      },
-    ],
 
     // off
     // TS

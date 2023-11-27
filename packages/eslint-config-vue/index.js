@@ -20,6 +20,7 @@ module.exports = {
     "plugin:vue/vue3-recommended",
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended",
+    "plugin:perfectionist/recommended-natural"
   ],
   plugins: ["vitest"],
   rules: {
@@ -276,16 +277,6 @@ module.exports = {
     "no-console": ["error", { allow: ["info", "debug", "warn", "error"] }],
     curly: ["error"],
     "max-statements-per-line": ["error", { max: 1 }],
-    "sort-imports": [
-      "error",
-      {
-        ignoreCase: false,
-        ignoreDeclarationSort: true,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
-        allowSeparatedGroups: false,
-      },
-    ],
 
     // off
     "@typescript-eslint/consistent-indexed-object-style": "off",

@@ -1,6 +1,6 @@
 {
   "name": "@lenne.tech/eslint-config-angular",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "ESLint config of lenne.Tech for Angular",
   "license": "MIT",
   "keywords": [
@@ -25,6 +25,7 @@
     "@typescript-eslint/eslint-plugin": "6.7.0",
     "@typescript-eslint/parser": "6.7.0",
     "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-perfectionist": "2.4.2",
     "functions-have-names": "1.2.3"
   },
   "devDependencies": {

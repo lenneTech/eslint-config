@@ -9,6 +9,7 @@ module.exports = {
     "plugin:jsonc/recommended-with-jsonc",
     "plugin:yml/standard",
     "plugin:markdown/recommended",
+    "plugin:perfectionist/recommended-natural"
   ],
   plugins: ["no-only-tests", "unused-imports"],
   settings: {
@@ -261,17 +262,6 @@ module.exports = {
     "import/no-named-as-default-member": "off",
     "import/no-named-as-default": "off",
     "import/namespace": "off",
-
-    "sort-imports": [
-      "error",
-      {
-        ignoreCase: false,
-        ignoreDeclarationSort: true,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
-        allowSeparatedGroups: false,
-      },
-    ],
 
     // yml
     "yml/quotes": ["error", { prefer: "single", avoidEscape: false }],
