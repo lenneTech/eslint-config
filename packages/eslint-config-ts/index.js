@@ -27,7 +27,17 @@ module.exports = {
     ],
     "@typescript-eslint/member-delimiter-style": [
       "error",
-      { multiline: { delimiter: "none" } },
+      {
+        multiline: {
+          delimiter: "semi",
+          requireLast: true,
+        },
+        singleline: {
+          delimiter: "semi",
+          requireLast: false,
+        },
+        multilineDetection: "brackets",
+      },
     ],
     "@typescript-eslint/type-annotation-spacing": ["error", {}],
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
@@ -47,8 +57,8 @@ module.exports = {
     "brace-style": "off",
     "@typescript-eslint/brace-style": [
       "error",
-      "stroustrup",
-      { allowSingleLine: true },
+      "1tbs",
+      { allowSingleLine: false },
     ],
     "comma-dangle": "off",
     "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
@@ -126,7 +136,7 @@ module.exports = {
 
     // Common
     semi: ["error", "always"],
-    curly: ["error"],
+    curly: ["error", "all"],
     quotes: ["error", "single"],
     "quote-props": ["error", "consistent-as-needed"],
 

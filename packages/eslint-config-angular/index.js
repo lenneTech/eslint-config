@@ -55,7 +55,17 @@ module.exports = {
     ], // Bans specific TypeScript comment syntax
     "@typescript-eslint/member-delimiter-style": [
       "error",
-      { multiline: { delimiter: "semi" } },
+      {
+        multiline: {
+          delimiter: "semi",
+          requireLast: true,
+        },
+        singleline: {
+          delimiter: "semi",
+          requireLast: false,
+        },
+        multilineDetection: "brackets",
+      },
     ], // Enforces member delimiter style in TypeScript interfaces and type literals
     "@typescript-eslint/type-annotation-spacing": ["error", {}], // Enforces consistent spacing around type annotations in TypeScript
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"], // Enforces consistent usage of type definitions in TypeScript (interface vs type)
@@ -100,11 +110,16 @@ module.exports = {
       "always",
       { exceptAfterSingleLine: true },
     ], // Requires an empty line between class members in TypeScript code, except after a single-line member
+    "@typescript-eslint/brace-style": [
+      "error",
+      "1tbs",
+      { allowSingleLine: false },
+    ],
 
     // normal
     "no-console": ["error", { allow: ["info", "debug", "warn", "error"] }], // Disallows or restricts the use of certain console methods
     "prefer-template": "error",
-    curly: ["error"],
+    curly: ["error", "all"],
     "max-statements-per-line": ["error", { max: 1 }],
 
     // off
