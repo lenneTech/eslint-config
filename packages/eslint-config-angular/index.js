@@ -48,6 +48,8 @@ module.exports = {
   ],
   ignorePatterns: ["**/*.js"],
   rules: {
+    "perfectionist/sort-classes": "off",
+
     // TS
     "@typescript-eslint/ban-ts-comment": [
       "error",

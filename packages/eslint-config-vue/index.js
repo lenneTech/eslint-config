@@ -20,10 +20,15 @@ module.exports = {
     "plugin:vue/vue3-recommended",
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended",
-    "plugin:perfectionist/recommended-natural"
+    "plugin:perfectionist/recommended-natural",
+    "plugin:prettier/recommended"
   ],
-  plugins: ["vitest"],
+  plugins: ["vitest", "prettier"],
   rules: {
+    "prettier/prettier": "error",
+
+    "perfectionist/sort-classes": "off",
+
     "vue/max-attributes-per-line": "off",
     "vue/no-v-html": "off",
     "vue/require-prop-types": "off",

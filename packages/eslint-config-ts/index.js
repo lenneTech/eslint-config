@@ -18,6 +18,8 @@ module.exports = {
     },
   },
   rules: {
+    "perfectionist/sort-classes": "off",
+
     "import/named": "off",
 
     // TS
