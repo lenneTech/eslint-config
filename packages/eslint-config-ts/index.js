@@ -124,9 +124,8 @@ module.exports = {
     /**
      * Basic
      */
-
     // import
-    "import/order": "error",
+    "import/order": "off", // Replaced by perfectionist/sort-imports
     "import/first": "error",
     "import/no-mutable-exports": "error",
     "import/no-unresolved": "off",
