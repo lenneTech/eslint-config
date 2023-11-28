@@ -28,6 +28,7 @@ module.exports = {
     "prettier/prettier": "error",
 
     "perfectionist/sort-classes": "off",
+    "perfectionist/sort-vue-attributes": "off",
 
     "vue/max-attributes-per-line": "off",
     "vue/no-v-html": "off",
