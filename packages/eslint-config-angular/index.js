@@ -10,13 +10,14 @@ module.exports = {
         "plugin:@angular-eslint/recommended",
         // This is required if you use inline templates in Components
         "plugin:@angular-eslint/template/process-inline-templates",
-        "plugin:perfectionist/recommended-natural"
+        "plugin:perfectionist/recommended-natural",
       ],
       rules: {
         /**
          * Any TypeScript source code (NOT TEMPLATE) related rules you wish to use/reconfigure over and above the
          * recommended set provided by the @angular-eslint project would go here.
          */
+        "perfectionist/sort-classes": "off",
         "@angular-eslint/directive-selector": [
           "error",
           { type: "attribute", prefix: "app", style: "camelCase" },
@@ -48,8 +49,6 @@ module.exports = {
   ],
   ignorePatterns: ["**/*.js"],
   rules: {
-    "perfectionist/sort-classes": "off",
-
     // TS
     "@typescript-eslint/ban-ts-comment": [
       "error",
