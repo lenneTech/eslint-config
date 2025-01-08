@@ -1,6 +1,6 @@
 {
   "name": "@lenne.tech/eslint-config-vue",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ESLint config of lenne.Tech for Vue",
   "license": "MIT",
   "keywords": [
