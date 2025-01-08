@@ -10,26 +10,23 @@
   "files": [
     "index.js"
   ],
+  "type": "module",
   "scripts": {
     "watch": "watch 'yalc push --private'"
   },
   "peerDependencies": {
-    "eslint": ">=7.4.0"
+    "eslint": ">=9.0.0"
   },
   "dependencies": {
-    "@angular-eslint/builder": "16.1.2",
-    "@angular-eslint/eslint-plugin": "16.1.2",
-    "@angular-eslint/eslint-plugin-template": "16.1.2",
-    "@angular-eslint/schematics": "16.1.2",
-    "@angular-eslint/template-parser": "16.1.2",
-    "@typescript-eslint/eslint-plugin": "6.7.0",
-    "@typescript-eslint/parser": "6.7.0",
-    "eslint-config-prettier": "9.0.0",
-    "eslint-plugin-perfectionist": "2.4.2",
+    "@typescript-eslint/parser": "8.19.1",
+    "@typescript-eslint/eslint-plugin": "8.19.1",
+    "@stylistic/eslint-plugin": "2.12.1",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-perfectionist": "4.5.0",
     "functions-have-names": "1.2.3"
   },
   "devDependencies": {
-    "eslint": "8.49.0",
+    "eslint": "9.17.0",
     "watch": "1.0.2"
   }
 }
