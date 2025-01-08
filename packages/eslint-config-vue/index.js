@@ -1,4 +1,4 @@
-console.debug("Linting Vue.111323..");
+console.debug("Linting Vue...");
 import vue from "eslint-plugin-vue";
 import vueParser from "vue-eslint-parser";
 import tsParser from "@typescript-eslint/parser";
@@ -7,7 +7,6 @@ import perfectionist from "eslint-plugin-perfectionist";
 import prettier from "eslint-plugin-prettier";
 import stylistic from "@stylistic/eslint-plugin";
 
-console.log("lala");
 export default [
   {
     files: ["*.ts"],
@@ -312,4 +311,3 @@ export default [
     },
   },
 ];
-console.log("ende");
