@@ -4,8 +4,9 @@ import typescript from "@typescript-eslint/eslint-plugin";
 import stylistic from "@stylistic/eslint-plugin";
 
 export default [
+  { ignores: ["dist/", ".yalc/", "node_modules/", ".husky/", "extras/"] },
   {
-    files: ["*.ts"],
+    files: ["*.ts", "*.js", "**/*.ts", "**/*.js"],
     languageOptions: {
       parser: tsParser,
     },
