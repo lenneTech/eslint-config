@@ -9,7 +9,17 @@ import stylistic from "@stylistic/eslint-plugin";
 
 export default [
   {
-    files: ["*.ts"],
+    ignores: [
+      "dist/",
+      ".yalc/",
+      "node_modules/",
+      ".husky/",
+      "extras/",
+      ".nuxt/",
+    ],
+  },
+  {
+    files: ["*.ts", "*.js", "*.vue", "**/*.ts", "**/*.js", "**/*.vue"],
     languageOptions: {
       parser: vueParser,
       parserOptions: {

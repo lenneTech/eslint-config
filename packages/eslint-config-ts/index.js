@@ -12,8 +12,9 @@ import eslintcomments from "eslint-plugin-eslint-comments";
 import noonlytests from "eslint-plugin-no-only-tests";
 
 export default [
+  { ignores: ["dist/", ".yalc/", "node_modules/", ".husky/", "extras/"] },
   {
-    files: ["*.ts"],
+    files: ["*.ts", "*.js", "**/*.ts", "**/*.js"],
     languageOptions: {
       parser: tsParser,
     },
