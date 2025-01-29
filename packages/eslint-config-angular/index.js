@@ -38,7 +38,7 @@ export default [
       "@stylistic/type-annotation-spacing": ["error", {}], // Enforces consistent spacing around type annotations in TypeScript
       "@typescript-eslint/consistent-type-definitions": ["error", "interface"], // Enforces consistent usage of type definitions in TypeScript (interface vs type)
       "@typescript-eslint/prefer-ts-expect-error": "error", // Recommends using '@ts-expect-error' over '@ts-ignore' when ignoring TypeScript errors
-      "@typescript-eslint/no-require-imports": "error", // Disallows using the `require` function to import modules in TypeScript
+      "@typescript-eslint/no-require-imports": "warn", // Disallows using the `require` function to import modules in TypeScript
       "no-useless-constructor": "off", // Disallows unnecessary constructors
       indent: "off", // Disallows inconsistent indentation
       "@typescript-eslint/no-invalid-this": "error", // Reports invalid uses of 'this' in TypeScript code
@@ -79,6 +79,8 @@ export default [
       "prefer-template": "error",
       curly: ["error", "all"],
       "max-statements-per-line": ["error", { max: 1 }],
+
+      "@typescript-eslint/no-unused-vars": "warn",
 
       // off
       // TS

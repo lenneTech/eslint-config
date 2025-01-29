@@ -12,7 +12,7 @@
   ],
   "type": "module",
   "scripts": {
-    "watch": "watch 'yalc push --private'",
+    "watch": "watch 'npx yalc push --private'",
     "reinit": "rimraf package-lock.json && rimraf node_modules && npm cache clean --force && npm i"
   },
   "peerDependencies": {
