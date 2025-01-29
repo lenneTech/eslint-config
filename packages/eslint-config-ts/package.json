@@ -1,6 +1,6 @@
 {
   "name": "@lenne.tech/eslint-config-ts",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "ESLint config of lenne.Tech for TypeScript",
   "license": "MIT",
   "keywords": [
