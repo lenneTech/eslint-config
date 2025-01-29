@@ -68,7 +68,7 @@ export default [
       "@stylistic/type-annotation-spacing": ["error", {}],
       "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
       "@typescript-eslint/prefer-ts-expect-error": "error",
-      "@typescript-eslint/no-require-imports": "error",
+      "@typescript-eslint/no-require-imports": "warn",
       // Override JS
       "no-useless-constructor": "off",
       "no-invalid-this": "off",
@@ -118,6 +118,8 @@ export default [
         { exceptAfterSingleLine: true },
       ],
 
+      "@typescript-eslint/no-unused-vars": "warn",
+
       // off
       "@typescript-eslint/consistent-indexed-object-style": "off",
       "@typescript-eslint/naming-convention": "off",
@@ -133,7 +135,7 @@ export default [
       "@typescript-eslint/ban-types": "off",
       "@typescript-eslint/triple-slash-reference": "off",
       // handled by unused-imports/no-unused-imports
-      "@typescript-eslint/no-unused-vars": "off",
+
 
       /**
        * Basic

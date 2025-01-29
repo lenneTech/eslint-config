@@ -4,7 +4,6 @@ import vueParser from "vue-eslint-parser";
 import tsParser from "@typescript-eslint/parser";
 import typescript from "@typescript-eslint/eslint-plugin";
 import perfectionist from "eslint-plugin-perfectionist";
-import prettier from "eslint-plugin-prettier";
 import stylistic from "@stylistic/eslint-plugin";
 
 export default [
@@ -16,6 +15,7 @@ export default [
       ".husky/",
       "extras/",
       ".nuxt/",
+      "*/*/.nuxt/",
     ],
   },
   {
@@ -33,13 +33,12 @@ export default [
       "@typescript-eslint": typescript,
       perfectionist,
       "@stylistic": stylistic,
-      prettier,
     },
     rules: {
       ...perfectionist.configs["recommended-natural"].rules,
       ...vue.configs["vue3-recommended"].rules,
       ...typescript.configs["recommended"].rules,
-      "prettier/prettier": "error",
+
 
       "perfectionist/sort-classes": "off",
       "perfectionist/sort-vue-attributes": "off",
@@ -205,7 +204,7 @@ export default [
       ],
       "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
       "@typescript-eslint/prefer-ts-expect-error": "error",
-      "@typescript-eslint/no-require-imports": "error",
+      "@typescript-eslint/no-require-imports": "warn",
       // Override JS
       "no-useless-constructor": "off",
       indent: "off",
@@ -302,6 +301,8 @@ export default [
       curly: ["error", "all"],
       "max-statements-per-line": ["error", { max: 1 }],
 
+      "@typescript-eslint/no-unused-vars": "warn",
+
       // off
       "@typescript-eslint/consistent-indexed-object-style": "off",
       "@typescript-eslint/naming-convention": "off",
@@ -317,7 +318,6 @@ export default [
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/ban-types": "off",
       "@typescript-eslint/triple-slash-reference": "off",
-      "@typescript-eslint/no-unused-vars": "off",
     },
   },
 ];
