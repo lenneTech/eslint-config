@@ -26,18 +26,14 @@ export default [
       'vitest.config.js',
       'tailwind.config.js',
       '.lintstagedrc',
-      '.husky',
       'yarn.lock',
       '.gitlab-ci.yml',
       'lerna.json',
       'assets/**',
       '.output',
-      'dist',
       'playwright-report',
       '.vscode',
       'test-results',
-      'node_modules',
-      '.nuxt'
     ],
   },
   {
