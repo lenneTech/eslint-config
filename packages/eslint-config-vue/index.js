@@ -22,7 +22,6 @@ export default [
       'package.json',
       'package-lock.json',
       'pnpm-lock.yaml',
-      'README.md',
       'vitest.config.js',
       'tailwind.config.js',
       '.lintstagedrc',
