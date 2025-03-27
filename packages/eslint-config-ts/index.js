@@ -120,6 +120,7 @@ export default [
       ],
 
       "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-unused-expressions": "warn",
 
       // off
       "@typescript-eslint/consistent-indexed-object-style": "off",
