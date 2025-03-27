@@ -69,7 +69,7 @@ export default [
       "@stylistic/type-annotation-spacing": ["error", {}],
       "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
       "@typescript-eslint/prefer-ts-expect-error": "error",
-      "@typescript-eslint/no-require-imports": "warn",
+      "@typescript-eslint/no-require-imports": "off",
       // Override JS
       "no-useless-constructor": "off",
       "no-invalid-this": "off",
