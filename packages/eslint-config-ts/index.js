@@ -43,6 +43,7 @@ export default [
       ...markdown.configs["recommended"].rules,
 
       "perfectionist/sort-classes": "off",
+      "perfectionist/sort-imports": "error",
 
       "import/named": "off",
 
@@ -68,7 +69,7 @@ export default [
       "@stylistic/type-annotation-spacing": ["error", {}],
       "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
       "@typescript-eslint/prefer-ts-expect-error": "error",
-      "@typescript-eslint/no-require-imports": "warn",
+      "@typescript-eslint/no-require-imports": "off",
       // Override JS
       "no-useless-constructor": "off",
       "no-invalid-this": "off",
@@ -142,14 +143,11 @@ export default [
        */
       // import
       "import/order": "off", // Replaced by perfectionist/sort-imports
-      "import/first": "error",
+      "import/first": "off",
       "import/no-mutable-exports": "error",
       "import/no-unresolved": "off",
       "import/no-absolute-path": "off",
-      "import/newline-after-import": [
-        "error",
-        { count: 1, considerComments: true },
-      ],
+      "import/newline-after-import": 'off',
 
       // Common
       semi: ["error", "always"],
