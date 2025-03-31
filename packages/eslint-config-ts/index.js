@@ -119,22 +119,6 @@ export default [
         { exceptAfterSingleLine: true },
       ],
 
-      // Vars & Expressions
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
-        {
-          "caughtErrors": "none",
-          "argsIgnorePattern": "\\b(type|of|returns)\\b",
-          "varsIgnorePattern": "^_",
-          "args": "after-used",
-          "vars": "all"
-        },
-      ],
-      "@typescript-eslint/no-unused-expressions": [
-          "warn",
-        { "allowShortCircuit": true, "allowTernary": true }
-      ],
-
       // off
       "@typescript-eslint/consistent-indexed-object-style": "off",
       "@typescript-eslint/naming-convention": "off",
@@ -150,8 +134,8 @@ export default [
       "@typescript-eslint/ban-types": "off",
       "@typescript-eslint/triple-slash-reference": "off",
       // handled by unused-imports/no-unused-imports
-      "unused-imports/no-unused-vars": "off",
-
+      "@typescript-eslint/no-unused-vars": "off",
+      // handled by unused-imports/no-unused-vars
 
       /**
        * Basic
@@ -171,6 +155,15 @@ export default [
       "quote-props": ["error", "consistent-as-needed"],
 
       "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "\\b(type|of|returns)\\b", // Arguments containing the words "type", "of", or "returns" will be ignored --> nest-server
+        },
+      ],
 
       "no-param-reassign": "off",
       "array-bracket-spacing": ["error", "never"],
