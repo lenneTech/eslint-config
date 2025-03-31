@@ -119,9 +119,6 @@ export default [
         { exceptAfterSingleLine: true },
       ],
 
-      "@typescript-eslint/no-unused-vars": "warn",
-      "@typescript-eslint/no-unused-expressions": "warn",
-
       // off
       "@typescript-eslint/consistent-indexed-object-style": "off",
       "@typescript-eslint/naming-convention": "off",
@@ -136,7 +133,7 @@ export default [
       "@typescript-eslint/explicit-module-boundary-types": "off",
       "@typescript-eslint/ban-types": "off",
       "@typescript-eslint/triple-slash-reference": "off",
-      // handled by unused-imports/no-unused-imports
+      "@typescript-eslint/no-unused-vars": "off", // handled by unused-imports/no-unused-vars
 
 
       /**
