@@ -16,7 +16,7 @@
     "reinit": "rimraf package-lock.json && rimraf node_modules && npm cache clean --force && npm i"
   },
   "peerDependencies": {
-    "eslint": ">=9.0.0"
+    "eslint": ">=9.26.0"
   },
   "dependencies": {
     "@stylistic/eslint-plugin": "4.2.0",
@@ -28,6 +28,6 @@
   },
   "devDependencies": {
     "eslint": "9.26.0",
-    "watch": "^0.13.0"
+    "watch": "0.13.0"
   }
 }
