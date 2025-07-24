@@ -1,6 +1,6 @@
 {
   "name": "@lenne.tech/eslint-config-angular",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "ESLint config of lenne.Tech for Angular",
   "license": "MIT",
   "keywords": [
