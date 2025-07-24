@@ -52,9 +52,9 @@ export default [
       "@stylistic": stylistic,
     },
     rules: {
-      ...perfectionist.configs["recommended-natural"].rules,
-      ...vue.configs["vue3-recommended"].rules,
-      ...typescript.configs["recommended"].rules,
+      ...(perfectionist.configs["recommended-natural"]?.rules || {}),
+      ...(vue.configs?.["recommended"]?.rules || {}),
+      ...(typescript.configs?.["recommended"]?.rules || {}),
 
 
       "perfectionist/sort-classes": "off",
