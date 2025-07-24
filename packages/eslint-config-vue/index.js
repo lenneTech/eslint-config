@@ -5,6 +5,7 @@ import tsParser from "@typescript-eslint/parser";
 import typescript from "@typescript-eslint/eslint-plugin";
 import perfectionist from "eslint-plugin-perfectionist";
 import stylistic from "@stylistic/eslint-plugin";
+import vitest from '@vitest/eslint-plugin';
 
 export default [
   {
@@ -46,12 +47,14 @@ export default [
       },
     },
     plugins: {
+      vitest,
       vue,
       "@typescript-eslint": typescript,
       perfectionist,
       "@stylistic": stylistic,
     },
     rules: {
+      ...vitest.configs.recommended.rules,
       ...(perfectionist.configs["recommended-natural"]?.rules || {}),
       ...(vue.configs?.["recommended"]?.rules || {}),
       ...(typescript.configs?.["recommended"]?.rules || {}),
