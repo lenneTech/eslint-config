@@ -71,7 +71,7 @@ export default [
 
       // reactivity transform
       "vue/no-setup-props-destructure": "off",
-      "vue/component-tags-order": [
+      "vue/block-order": [
         "error",
         {
           order: ["script", "template", "style"],
