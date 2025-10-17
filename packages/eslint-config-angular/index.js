@@ -2,6 +2,7 @@ console.log("Linting Angular...");
 import tsParser from "@typescript-eslint/parser";
 import typescript from "@typescript-eslint/eslint-plugin";
 import stylistic from "@stylistic/eslint-plugin";
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
   { ignores: ["dist/", ".yalc/", "node_modules/", ".husky/", "extras/"] },
@@ -80,7 +81,14 @@ export default [
       curly: ["error", "all"],
       "max-statements-per-line": ["error", { max: 1 }],
 
-      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
 
       // off
       // TS
@@ -116,4 +124,6 @@ export default [
       "lines-between-class-members": "off", // Requires an empty line between class members (turned off because the TypeScript rule handles it)
     },
   },
+  // Prettier config must be last to override conflicting rules
+  eslintConfigPrettier,
 ];

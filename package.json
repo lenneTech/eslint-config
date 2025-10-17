@@ -12,8 +12,11 @@
     "packages/eslint-config-vue"
   ],
   "devDependencies": {
-    "eslint": "9.31.0",
+    "eslint": "9.37.0",
     "rimraf": "6.0.1",
-    "typescript": "5.8.3"
+    "typescript": "5.9.3"
+  },
+  "overrides": {
+    "merge": "2.1.1"
   }
 }

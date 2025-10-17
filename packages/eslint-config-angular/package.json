@@ -19,15 +19,14 @@
     "eslint": ">=9.26.0"
   },
   "dependencies": {
-    "@stylistic/eslint-plugin": "5.2.2",
-    "@typescript-eslint/eslint-plugin": "8.38.0",
-    "@typescript-eslint/parser": "8.38.0",
+    "@stylistic/eslint-plugin": "5.4.0",
+    "@typescript-eslint/eslint-plugin": "8.46.1",
+    "@typescript-eslint/parser": "8.46.1",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-perfectionist": "4.15.0",
-    "functions-have-names": "1.2.3"
+    "eslint-plugin-perfectionist": "4.15.1"
   },
   "devDependencies": {
-    "eslint": "9.31.0",
+    "eslint": "9.37.0",
     "watch": "1.0.2"
   }
 }
