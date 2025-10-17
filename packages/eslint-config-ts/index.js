@@ -10,6 +10,7 @@ import markdown from "eslint-plugin-markdown";
 import jsonc from "eslint-plugin-jsonc";
 import eslintcomments from "eslint-plugin-eslint-comments";
 import noonlytests from "eslint-plugin-no-only-tests";
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
   { ignores: ["dist/", ".yalc/", "node_modules/", ".husky/", "extras/"] },
@@ -70,6 +71,10 @@ export default [
       "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
       "@typescript-eslint/prefer-ts-expect-error": "error",
       "@typescript-eslint/no-require-imports": "off",
+      "@typescript-eslint/no-unused-expressions": [
+        "warn",
+        { allowShortCircuit: true, allowTernary: true },
+      ],
       // Override JS
       "no-useless-constructor": "off",
       "no-invalid-this": "off",
@@ -118,6 +123,7 @@ export default [
         "always",
         { exceptAfterSingleLine: true },
       ],
+      "@stylistic/indent": ["error", 2],
 
       // off
       "@typescript-eslint/consistent-indexed-object-style": "off",
@@ -157,10 +163,7 @@ export default [
       "unused-imports/no-unused-vars": [
         "warn",
         {
-          vars: "all",
-          varsIgnorePattern: "^_",
-          args: "after-used",
-          argsIgnorePattern: "\\b(type|of|returns)\\b", // Arguments containing the words "type", "of", or "returns" will be ignored --> nest-server
+          caughtErrors: "none",
         },
       ],
 
@@ -291,4 +294,6 @@ export default [
       "yml/no-empty-document": "off",
     },
   },
+  // Prettier config must be last to override conflicting rules
+  eslintConfigPrettier,
 ];

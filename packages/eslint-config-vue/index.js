@@ -6,6 +6,7 @@ import typescript from "@typescript-eslint/eslint-plugin";
 import perfectionist from "eslint-plugin-perfectionist";
 import stylistic from "@stylistic/eslint-plugin";
 import vitest from '@vitest/eslint-plugin';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
   {
@@ -142,7 +143,7 @@ export default [
       "vue/object-curly-spacing": ["error", "always"],
       "vue/object-property-newline": [
         "error",
-        { allowMultiplePropertiesPerLine: true },
+        { allowAllPropertiesOnSameLine: false },
       ],
       "vue/object-shorthand": [
         "error",
@@ -321,7 +322,14 @@ export default [
       curly: ["error", "all"],
       "max-statements-per-line": ["error", { max: 1 }],
 
-      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+        },
+      ],
 
       // off
       "@typescript-eslint/consistent-indexed-object-style": "off",
@@ -340,4 +348,6 @@ export default [
       "@typescript-eslint/triple-slash-reference": "off",
     },
   },
+  // Prettier config must be last to override conflicting rules
+  eslintConfigPrettier,
 ];
