@@ -2,7 +2,7 @@ console.log("Linting TypeScript...");
 import tsParser from "@typescript-eslint/parser";
 import typescript from "@typescript-eslint/eslint-plugin";
 import perfectionist from "eslint-plugin-perfectionist";
-import importPlugin from "eslint-plugin-import";
+import importPlugin from "eslint-plugin-import-x";
 import unusedImportPlugin from "eslint-plugin-unused-imports";
 import yml from "eslint-plugin-yml";
 import stylistic from "@stylistic/eslint-plugin";
@@ -11,6 +11,25 @@ import jsonc from "eslint-plugin-jsonc";
 import eslintcomments from "eslint-plugin-eslint-comments";
 import noonlytests from "eslint-plugin-no-only-tests";
 import eslintConfigPrettier from 'eslint-config-prettier';
+
+/**
+ * Re-key a shipped config's rules from the `import-x/` prefix to `import/`.
+ *
+ * We moved from `eslint-plugin-import` to its maintained fork
+ * `eslint-plugin-import-x` (the original pins minimatch ^3, which is stuck on a
+ * brace-expansion line that upstream no longer patches — GHSA-mh99-v99m-4gvg —
+ * and its peer range has no eslint 10 entry at all).
+ *
+ * The fork registers its own rules under `import-x/`, but a rule's public name
+ * comes from the key it is registered under in `plugins`, not from the package.
+ * So we keep registering it as `import` and only re-key the rule objects the
+ * plugin ships. That keeps every consumer's `import/...` rule override AND every
+ * `// eslint-disable-next-line import/...` comment across all lt projects
+ * working — renaming them would silently stop suppressing, which is a far worse
+ * outcome than the dependency swap is worth.
+ */
+const asImportPrefix = (rules) =>
+  Object.fromEntries(Object.entries(rules).map(([key, value]) => [key.replace(/^import-x\//, "import/"), value]));
 
 export default [
   { ignores: ["dist/", ".yalc/", "node_modules/", ".husky/", "extras/"] },
@@ -36,8 +55,8 @@ export default [
       ...perfectionist.configs["recommended-natural"].rules,
       ...typescript.configs["eslint-recommended"].rules,
       ...typescript.configs["recommended"].rules,
-      ...importPlugin.configs["typescript"].rules,
-      ...importPlugin.configs["recommended"].rules,
+      ...asImportPrefix(importPlugin.configs["typescript"].rules),
+      ...asImportPrefix(importPlugin.configs["recommended"].rules),
       ...eslintcomments.configs["recommended"].rules,
       ...jsonc.configs["recommended-with-jsonc"].rules,
       ...yml.configs["standard"].rules,
