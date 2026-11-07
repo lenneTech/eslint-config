@@ -3,6 +3,11 @@
   "version": "2.3.0",
   "description": "ESLint config of lenne.Tech for Angular",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lenneTech/eslint-config",
+    "directory": "packages/eslint-config-angular"
+  },
   "keywords": [
     "eslint-config-angular"
   ],

@@ -12,10 +12,22 @@ env:
 jobs:
   build:
     runs-on: ${{ matrix.os }}
+    # Trusted Publishing (OIDC): npm exchanges this run's GitHub OIDC token for a publish token that
+    # expires within minutes, instead of a long-lived NPM_TOKEN, and signs a provenance statement,
+    # because the repository is public. Each of the three packages needs its own Trusted Publisher on
+    # npmjs.com: lenneTech / eslint-config / release.yml, no environment. Renaming this file breaks
+    # publishing until those entries are changed too. Job-level `permissions` replaces the default
+    # token permissions: `contents: write` for the GitHub release changelogithub creates,
+    # `id-token: write` to request the OIDC token.
+    permissions:
+      contents: write
+      id-token: write
 
     strategy:
       matrix:
-        node: [18]
+        # Node 24 instead of 18: OIDC needs npm >= 11.5.1, npm 12 needs ^24.15.0, and Node 22.22.2's
+        # bundled npm cannot `npm install -g` (actions/runner-images#13883).
+        node: [24]
         os: [ubuntu-latest]
 
     steps:
@@ -40,10 +52,17 @@ jobs:
           fetch-depth: 3
       - name: Install dependencies
         run: npm install
+      # Trusted Publishing needs npm >= 11.5.1. npm 12 is the major the lenneTech base packages
+      # publish with through OIDC. Pinned to that major, not `@latest`, so a new npm major never
+      # reaches a release run without having been tried first.
+      - name: npm for Trusted Publishing
+        run: npm install -g npm@12
+      # No NPM_TOKEN fallback: npm would use it silently whenever the OIDC exchange fails and publish
+      # without provenance. A failed exchange now fails the publish (rerun with `gh run rerun --failed`).
+      # npm exchanges a token per workspace package. `--ignore-scripts`: nothing is built, no lifecycle
+      # script runs in the publish step.
       - name: Publish Package
-        run: npm publish --access public --workspaces
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public --workspaces --ignore-scripts
       - name: Deploy notification
         if: always()
         uses: adamkdean/simple-slack-notify@master
