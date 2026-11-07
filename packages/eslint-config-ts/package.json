@@ -3,6 +3,11 @@
   "version": "2.3.0",
   "description": "ESLint config of lenne.Tech for TypeScript",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lenneTech/eslint-config",
+    "directory": "packages/eslint-config-ts"
+  },
   "keywords": [
     "eslint-config-ts"
   ],
