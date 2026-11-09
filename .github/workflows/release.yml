@@ -6,9 +6,6 @@ on:
       - "v*"
   workflow_dispatch:
 
-env:
-  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -63,12 +60,3 @@ jobs:
       # script runs in the publish step.
       - name: Publish Package
         run: npm publish --access public --workspaces --ignore-scripts
-      - name: Deploy notification
-        if: always()
-        uses: adamkdean/simple-slack-notify@master
-        with:
-          channel: "#deployments"
-          status: ${{ job.status }}
-          success_text: "Version (#${{github.ref_name}}) von @lenne.tech/eslint-config wurde erfolgreich released."
-          failure_text: "Release (#${{github.ref_name}}) von @lenne.tech/eslint-config ist fehlgeschlagen."
-          cancelled_text: "Release (#${{github.ref_name}}) von @lenne.tech/eslint-config wurde abgebrochen."
